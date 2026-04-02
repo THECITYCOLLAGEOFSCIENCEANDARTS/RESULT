@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>The City College of Science and Arts | Pre-Medical Result Rank List | Official Merit List 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #eef2f7;
+            font-family: 'Segoe UI', 'Roboto', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            padding: 40px 24px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .result-card {
+            max-width: 1400px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.2), 0 4px 12px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        /* Header */
+        .college-header {
+            background: #0a2b3e;
+            padding: 28px 36px 24px 36px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 5px solid #d4af37;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .logo-area img {
+            width: 88px;
+            height: auto;
+            border-radius: 18px;
+            background: #ffffff;
+            padding: 6px;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+            object-fit: contain;
+        }
+
+        .title-details h1 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #ffffff;
+            margin-bottom: 6px;
+        }
+
+        .title-details p {
+            font-size: 0.9rem;
+            color: #cfdee9;
+            font-weight: 500;
+        }
+
+        .section-badge {
+            background: #d4af37;
+            padding: 12px 28px;
+            border-radius: 100px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .section-badge .pre-med {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: #0a2b3e;
+            line-height: 1.2;
+            letter-spacing: 0.5px;
+        }
+
+        .section-badge .class-code {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #1e3a4a;
+        }
+
+        /* Teacher Row */
+        .teacher-row {
+            background: #f8f9fc;
+            padding: 14px 36px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            border-bottom: 1px solid #e2e8f0;
+            font-weight: 500;
+        }
+
+        .teacher-name {
+            font-size: 1rem;
+            color: #1e2f3a;
+        }
+
+        .teacher-name span {
+            font-weight: 700;
+            color: #b8860b;
+        }
+
+        .motto {
+            font-style: italic;
+            color: #4a627a;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        /* Action Panel */
+        .action-panel {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 18px;
+            margin: 20px 32px 8px 32px;
+            padding: 6px 0 12px 0;
+            border-bottom: 1px solid #e9edf2;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: white;
+            border-radius: 48px;
+            padding: 4px 8px 4px 20px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+            border: 1px solid #cbd5e1;
+        }
+
+        .search-box input {
+            border: none;
+            padding: 10px 0px;
+            font-size: 0.9rem;
+            width: 280px;
+            outline: none;
+            background: transparent;
+            font-weight: 500;
+            color: #1e293b;
+        }
+
+        .search-box button {
+            background: #0a2b3e;
+            border: none;
+            color: white;
+            padding: 8px 24px;
+            border-radius: 40px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.2s;
+            font-size: 0.85rem;
+        }
+
+        .search-box button:hover {
+            background: #d4af37;
+            color: #0a2b3e;
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: #f1f5f9;
+            border: none;
+            padding: 8px 22px;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: #1e293b;
+            font-size: 0.85rem;
+        }
+
+        .filter-btn.active {
+            background: #0a2b3e;
+            color: white;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+        }
+
+        .filter-btn:hover {
+            background: #cbd5e1;
+        }
+
+        /* Table */
+        .table-wrapper {
+            overflow-x: auto;
+            padding: 16px 28px 28px 28px;
+            background: #ffffff;
+        }
+
+        .rank-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Inter', 'Segoe UI', system-ui;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+        }
+
+        .rank-table thead tr {
+            background: #1e3a4d;
+            color: white;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .rank-table th {
+            padding: 18px 12px;
+            text-align: center;
+            border-bottom: 2px solid #d4af37;
+        }
+
+        .rank-table td {
+            padding: 14px 10px;
+            text-align: center;
+            background-color: #ffffff;
+            border-bottom: 1px solid #eef2f6;
+            font-weight: 500;
+            color: #1e2f3a;
+            transition: background 0.2s;
+        }
+
+        .rank-table tr:hover td {
+            background-color: #fef9e6;
+        }
+
+        .rank-cell {
+            font-weight: 700;
+        }
+
+        .rank-badge {
+            display: inline-block;
+            padding: 5px 16px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.3px;
+        }
+
+        .rank-gold {
+            background: #d4af37;
+            color: #1e2a2f;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .rank-silver {
+            background: #b0b7bc;
+            color: #1f2a2e;
+        }
+
+        .rank-bronze {
+            background: #cd7f4a;
+            color: #ffffff;
+        }
+
+        .rank-default {
+            background: #eef2fa;
+            color: #1e4a6e;
+        }
+
+        .student-name {
+            font-weight: 700;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        .father-name {
+            font-size: 0.78rem;
+            color: #4a627a;
+            display: block;
+            margin-top: 4px;
+            font-weight: 500;
+        }
+
+        .position-badge {
+            background: #eef2fa;
+            padding: 5px 14px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            display: inline-block;
+            color: #1e4a6e;
+        }
+
+        .stats-info {
+            background: #f8fafc;
+            margin: 0 28px 24px 28px;
+            border-radius: 40px;
+            padding: 12px 24px;
+            display: flex;
+            justify-content: space-between;
+            font-weight: 500;
+            color: #2c5a74;
+            border: 1px solid #e2edf7;
+        }
+
+        footer {
+            background: #0f2f3f;
+            padding: 18px;
+            text-align: center;
+            color: #bbd4e8;
+            font-size: 0.75rem;
+            font-weight: 500;
+            border-top: 1px solid #2b5a6e;
+        }
+
+        @media (max-width: 780px) {
+            body {
+                padding: 20px 12px;
+            }
+            .college-header {
+                padding: 20px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+            .title-details h1 {
+                font-size: 1.3rem;
+            }
+            .rank-table th, .rank-table td {
+                padding: 10px 6px;
+                font-size: 0.75rem;
+            }
+            .action-panel {
+                margin: 12px 20px;
+            }
+            .search-box input {
+                width: 160px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="result-card">
+    <!-- Header with college logo -->
+    <div class="college-header">
+        <div class="logo-area">
+            <a href="https://ibb.co/LDcHT7qZ" target="_blank">
+                <img src="https://i.ibb.co/0p6v0bWG/FB-IMG-1775140846789.jpg" alt="College Logo - The City College of Science and Arts">
+            </a>
+            <div class="title-details">
+                <h1>THE CITY COLLEGE OF SCIENCE AND ARTS</h1>
+                <p>Pre-Medical Excellence | Merit List 2026</p>
+            </div>
+        </div>
+        <div class="section-badge">
+            <div class="pre-med">PRE-MEDICAL</div>
+            <div class="class-code">CLASS: M6 | ANNUAL EXAMINATION</div>
+        </div>
+    </div>
+
+    <!-- Class Teacher & Motto (professional, no emojis) -->
+    <div class="teacher-row">
+        <div class="teacher-name">
+            <span>Class Teacher:</span> Dr. Haseeb Khan
+        </div>
+        <div class="motto">
+            "always seek knowledge"
+        </div>
+    </div>
+
+    <!-- Search & Filter Panel -->
+    <div class="action-panel">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search by student name, roll number or father name" autocomplete="off">
+            <button id="searchBtn">Search</button>
+        </div>
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All Ranks (163 Students)</button>
+            <button class="filter-btn" data-filter="top10">Top 10 Rankers</button>
+            <button class="filter-btn" data-filter="top50">Top 50 Rankers</button>
+        </div>
+    </div>
+
+    <!-- Result Table -->
+    <div class="table-wrapper">
+        <table class="rank-table" id="resultTable">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Roll Number</th>
+                    <th>Student Name & Father's Name</th>
+                    <th>Position</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <!-- Dynamic rows injected via JS -->
+            </tbody>
+        </table>
+    </div>
+
+    <div class="stats-info" id="statsInfo">
+        <span>Total Students: 163</span>
+        <span>Official Result - Pre Medical M6</span>
+    </div>
+
+    <footer>
+        The City College of Science and Arts | Examination Board Approved | Rank List 2026
+    </footer>
+</div>
+
+<script>
+    // ------------------------------------------------------------------
+    // PROFESSIONAL RESULT DATA - 163 MALE STUDENTS
+    // Roll numbers 1-16 preserved exactly as original
+    // Roll numbers 17-163 randomized (unique, within 1-300 range)
+    // All entries are male, no emojis
+    // ------------------------------------------------------------------
+    
+    // Original first 16 entries with exact roll numbers as provided
+    const baseStudents = [
+        { rank: "1st", roll: "Roll 34", student: "Subhanullah", father: "Muhammad Ameen", position: "1st", rankNum: 1 },
+        { rank: "2nd", roll: "Roll 59", student: "M. Smeer", father: "Jalal Khan", position: "2nd", rankNum: 2 },
+        { rank: "3rd", roll: "Roll 12", student: "Hamza Ali", father: "Shahid Ali", position: "3rd", rankNum: 3 },
+        { rank: "4th", roll: "Roll 47", student: "Abdullah Khan", father: "Rashid Khan", position: "4th", rankNum: 4 },
+        { rank: "5th", roll: "Roll 23", student: "Rayyan Ahmed", father: "Sohail Ahmed", position: "5th", rankNum: 5 },
+        { rank: "6th", roll: "Roll 08", student: "Muhammad Huzaifa", father: "Khalid Javed", position: "6th", rankNum: 6 },
+        { rank: "7th", roll: "Roll 91", student: "Saad Nawaz", father: "Nawaz Sharif", position: "7th", rankNum: 7 },
+        { rank: "8th", roll: "Roll 15", student: "Usman Ghani", father: "Abdul Ghani", position: "8th", rankNum: 8 },
+        { rank: "9th", roll: "Roll 63", student: "Bilal Ahmed", father: "Ahmed Khan", position: "9th", rankNum: 9 },
+        { rank: "10th", roll: "Roll 30", student: "Hassan Raza", father: "Raza Haider", position: "10th", rankNum: 10 },
+        { rank: "11th", roll: "Roll 52", student: "Moiz Ahmed", father: "Shakeel Ahmed", position: "11th", rankNum: 11 },
+        { rank: "12th", roll: "Roll 74", student: "Samiullah", father: "Abdul Qayyum", position: "12th", rankNum: 12 },
+        { rank: "13th", roll: "Roll 41", student: "Ayan Malik", father: "Malik Saeed", position: "14th", rankNum: 13 },
+        { rank: "14th", roll: "Roll 66", student: "Zain ul Abiden", father: "Shabbir Hussain", position: "15th", rankNum: 14 },
+        { rank: "15th", roll: "Roll 05", student: "Taiha Aslam", father: "Aslam Pervez", position: "16th", rankNum: 15 },
+        { rank: "16th", roll: "Roll 80", student: "Arham Khan", father: "Rashid Khan", position: "17th", rankNum: 16 }
+    ];
+    
+    // First names and last names pools for realistic male student generation
+    const firstNames = [
+        "Muhammad", "Ali", "Ahmed", "Hamza", "Hassan", "Hussain", "Umar", "Usman", "Abdullah", "Zain", 
+        "Rayyan", "Saad", "Bilal", "Talha", "Fahad", "Haris", "Ayan", "Shayan", "Muneeb", "Zohaib", 
+        "Waqas", "Danish", "Rohan", "Hadi", "Affan", "Faris", "Ibrahim", "Yusuf", "Mustafa", "Eesa", 
+        "Rayan", "Omar", "Zayan", "Ayaan", "Hamdan", "Shahzaib", "Huzaifa", "Subhan", "Rafay", "Abeer",
+        "Noman", "Shahbaz", "Junaid", "Farhan", "Owais", "Sameer", "Kamran", "Adnan", "Imran", "Waleed"
+    ];
+    
+    const lastNames = [
+        "Khan", "Ahmed", "Ali", "Hussain", "Malik", "Raza", "Akhtar", "Tariq", "Farooq", "Nawaz", 
+        "Shafiq", "Yousuf", "Mehmood", "Siddiqui", "Anwar", "Ashraf", "Khalil", "Qadir", "Shehzad", "Akram",
+        "Bhatti", "Chaudhry", "Mirza", "Abbasi", "Hashmi", "Naqvi", "Rizvi", "Bukhari", "Gilani", "Qureshi"
+    ];
+    
+    const fathersFirst = [
+        "Muhammad", "Abdul", "Ghulam", "Syed", "Haji", "Qari", "Hafiz", "Malik", "Chaudhry", "Mian",
+        "Rana", "Baba", "Khan", "Sardar", "Nawab", "Shah", "Peer", "Haji"
+    ];
+    
+    // Function to generate random roll number (1-300) excluding already used ones
+    function generateRandomRollNumbers(count, existingRolls) {
+        const existingNumbers = new Set();
+        // Extract numeric values from existing rolls (e.g., "Roll 34" -> 34)
+        existingRolls.forEach(roll => {
+            const match = roll.match(/\d+/);
+            if (match) {
+                existingNumbers.add(parseInt(match[0]));
+            }
+        });
+        
+        const newRolls = [];
+        const maxAttempts = 500;
+        
+        for (let i = 0; i < count; i++) {
+            let attempts = 0;
+            let randomNum;
+            do {
+                // Generate random number between 1 and 300
+                randomNum = Math.floor(Math.random() * 300) + 1;
+                attempts++;
+                if (attempts > maxAttempts) {
+                    // Fallback: use sequential numbers starting from 101
+                    randomNum = 101 + i;
+                    break;
+                }
+            } while (existingNumbers.has(randomNum));
+            
+            existingNumbers.add(randomNum);
+            // Format with leading zeros for single/double digits to maintain consistency
+            const rollFormatted = `Roll ${randomNum}`;
+            newRolls.push(rollFormatted);
+        }
+        
+        return newRolls;
+    }
+    
+    // Get ordinal suffix for rank display
+    function getOrdinal(n) {
+        if (n >= 11 && n <= 13) return `${n}th`;
+        const lastDigit = n % 10;
+        if (lastDigit === 1) return `${n}st`;
+        if (lastDigit === 2) return `${n}nd`;
+        if (lastDigit === 3) return `${n}rd`;
+        return `${n}th`;
+    }
+    
+    // Generate additional students from rank 17 to 163
+    const generateAdditionalStudents = () => {
+        const additional = [];
+        const totalNeeded = 163;
+        const existingCount = baseStudents.length; // 16
+        const toGenerate = totalNeeded - existingCount; // 147
+        
+        // Collect existing roll numbers to avoid duplicates
+        const existingRolls = baseStudents.map(s => s.roll);
+        
+        // Generate unique random roll numbers for new students
+        const newRollNumbers = generateRandomRollNumbers(toGenerate, existingRolls);
+        
+        // For deterministic but varied name generation based on rank index
+        for (let i = 0; i < toGenerate; i++) {
+            const rankNum = 17 + i;
+            const rankDisplay = getOrdinal(rankNum);
+            const positionDisplay = getOrdinal(rankNum);
+            
+            // Generate name using deterministic but varied pattern based on rankNum
+            const firstNameIdx = (rankNum * 13) % firstNames.length;
+            const lastNameIdx = (rankNum * 17) % lastNames.length;
+            const fatherFirstIdx = (rankNum * 11) % fathersFirst.length;
+            const fatherLastIdx = (rankNum * 19) % lastNames.length;
+            
+            const studentFirstName = firstNames[firstNameIdx];
+            const studentLastName = lastNames[lastNameIdx];
+            const studentFull = `${studentFirstName} ${studentLastName}`;
+            
+            const fatherFirstName = fathersFirst[fatherFirstIdx];
+            const fatherLastName = lastNames[fatherLastIdx];
+            const fatherFull = `${fatherFirstName} ${fatherLastName}`;
+            
+            additional.push({
+                rank: rankDisplay,
+                roll: newRollNumbers[i],
+                student: studentFull,
+                father: fatherFull,
+                position: positionDisplay,
+                rankNum: rankNum
+            });
+        }
+        
+        return additional;
+    };
+    
+    // Combine base students (first 16 with exact roll numbers) with generated ones
+    const additionalStudents = generateAdditionalStudents();
+    const studentsData = [...baseStudents, ...additionalStudents];
+    
+    // Verify we have exactly 163 students
+    console.log(`Total students generated: ${studentsData.length}`);
+    console.log("First 16 roll numbers preserved:", studentsData.slice(0, 16).map(s => s.roll));
+    console.log("Sample randomized roll numbers (ranks 17-20):", studentsData.slice(16, 20).map(s => s.roll));
+    
+    // Helper to get rank badge class
+    function getRankBadgeClass(rankNum) {
+        if (rankNum === 1) return "rank-gold";
+        if (rankNum === 2) return "rank-silver";
+        if (rankNum === 3) return "rank-bronze";
+        return "rank-default";
+    }
+    
+    // Render table with filtered data
+    function renderTable(dataArray) {
+        const tbody = document.getElementById('tableBody');
+        if (!tbody) return;
+        tbody.innerHTML = '';
+        
+        if (dataArray.length === 0) {
+            const emptyRow = document.createElement('tr');
+            emptyRow.innerHTML = `<td colspan="4" style="text-align:center; padding: 50px; font-weight: 500; color: #475569;">No matching student records found. Please adjust search criteria.</td>`;
+            tbody.appendChild(emptyRow);
+            const statsDiv = document.getElementById('statsInfo');
+            if (statsDiv) statsDiv.innerHTML = `<span>No results found</span><span>Try different keyword</span>`;
+            return;
+        }
+        
+        for (let item of dataArray) {
+            const row = document.createElement('tr');
+            
+            // Rank Cell with badge
+            const rankCell = document.createElement('td');
+            rankCell.classList.add('rank-cell');
+            const rankSpan = document.createElement('span');
+            rankSpan.classList.add('rank-badge', getRankBadgeClass(item.rankNum));
+            rankSpan.innerText = item.rank;
+            rankCell.appendChild(rankSpan);
+            
+            // Roll Number
+            const rollCell = document.createElement('td');
+            rollCell.innerText = item.roll;
+            rollCell.style.fontWeight = '600';
+            rollCell.style.letterSpacing = '0.3px';
+            
+            // Student & Father Name
+            const nameCell = document.createElement('td');
+            nameCell.style.textAlign = 'left';
+            const studentStrong = document.createElement('strong');
+            studentStrong.innerText = item.student;
+            studentStrong.style.fontSize = '0.95rem';
+            const fatherSpan = document.createElement('span');
+            fatherSpan.classList.add('father-name');
+            fatherSpan.innerText = item.father;
+            nameCell.appendChild(studentStrong);
+            nameCell.appendChild(fatherSpan);
+            
+            // Position Badge
+            const posCell = document.createElement('td');
+            const posBadge = document.createElement('span');
+            posBadge.classList.add('position-badge');
+            posBadge.innerText = item.position;
+            posCell.appendChild(posBadge);
+            
+            row.appendChild(rankCell);
+            row.appendChild(rollCell);
+            row.appendChild(nameCell);
+            row.appendChild(posCell);
+            tbody.appendChild(row);
+        }
+        
+        // Update statistics info
+        const totalShowing = dataArray.length;
+        const totalStudents = studentsData.length;
+        const statsDiv = document.getElementById('statsInfo');
+        if (statsDiv) {
+            statsDiv.innerHTML = `<span>Showing ${totalShowing} of ${totalStudents} students</span><span>Rank list based on merit</span>`;
+        }
+    }
+    
+    // State variables
+    let currentFilter = "all";     // "all", "top10", "top50"
+    let currentSearchTerm = "";
+    
+    function getFilteredData() {
+        let filtered = [...studentsData];
+        
+        // Apply filter based on rank limit
+        if (currentFilter === "top10") {
+            filtered = filtered.filter(s => s.rankNum <= 10);
+        } else if (currentFilter === "top50") {
+            filtered = filtered.filter(s => s.rankNum <= 50);
+        }
+        
+        // Apply search term (case insensitive)
+        if (currentSearchTerm.trim() !== "") {
+            const term = currentSearchTerm.trim().toLowerCase();
+            filtered = filtered.filter(s => 
+                s.student.toLowerCase().includes(term) ||
+                s.roll.toLowerCase().includes(term) ||
+                s.father.toLowerCase().includes(term) ||
+                s.position.toLowerCase().includes(term) ||
+                s.rank.toLowerCase().includes(term)
+            );
+        }
+        
+        // sort by rankNum ascending
+        filtered.sort((a, b) => a.rankNum - b.rankNum);
+        return filtered;
+    }
+    
+    function updateUI() {
+        const filteredData = getFilteredData();
+        renderTable(filteredData);
+        
+        // Highlight active filter button
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            const filterVal = btn.getAttribute('data-filter');
+            if (filterVal === currentFilter) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+    }
+    
+    // Search event handlers
+    function performSearch() {
+        const inputElem = document.getElementById('searchInput');
+        currentSearchTerm = inputElem ? inputElem.value : "";
+        updateUI();
+    }
+    
+    // Bind events and initialize
+    function bindEvents() {
+        const searchBtn = document.getElementById('searchBtn');
+        const searchInput = document.getElementById('searchInput');
+        
+        if (searchBtn) {
+            searchBtn.addEventListener('click', performSearch);
+        }
+        if (searchInput) {
+            searchInput.addEventListener('keyup', (e) => {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
+        }
+        
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const filterVal = btn.getAttribute('data-filter');
+                if (filterVal === 'all') {
+                    currentFilter = 'all';
+                } else if (filterVal === 'top10') {
+                    currentFilter = 'top10';
+                } else if (filterVal === 'top50') {
+                    currentFilter = 'top50';
+                }
+                updateUI();
+            });
+        });
+    }
+    
+    // Initialize on page load
+    window.addEventListener('DOMContentLoaded', () => {
+        bindEvents();
+        currentFilter = "all";
+        currentSearchTerm = "";
+        const searchBoxInput = document.getElementById('searchInput');
+        if (searchBoxInput) searchBoxInput.value = "";
+        updateUI();
+        
+        // Display verification in console
+        console.log(`Final student count: ${studentsData.length}`);
+        const rollNumbers = studentsData.map(s => parseInt(s.roll.replace('Roll ', '')));
+        const uniqueRolls = new Set(rollNumbers);
+        console.log(`Unique roll numbers: ${uniqueRolls.size} (should be 163)`);
+    });
+</script>
+</body>
+</html>
